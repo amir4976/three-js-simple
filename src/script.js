@@ -6,26 +6,26 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // let canvas = document.querySelector('.WebGLClass')
 // let scene = new THREE.Scene()
-//// make object
+// // make object
 // let geometry = new THREE.BoxGeometry(1, 1, 1)
-// let material = new THREE.MeshBasicMaterial({ color: 'red' })
+// let material = new THREE.MeshBasicMaterial({ color: 'blue',wireframe:true })
 // let mesh = new THREE.Mesh(geometry, material)
 
-//// move object
+// // move object
 // mesh.position.x = 0.2
 // mesh.position.z = 0.5
 // mesh.position.y = 0.5
 
-//// make a scale for mesh
+// // make a scale for mesh
 // mesh.scale.x = 2
 // mesh.scale.y = 2
 // mesh.scale.z = 1
 // mesh.scale.set(0.8, 0.5, 1)
 
 // //rotation
-// also you can change order if xyz to bat you have to reorder it before rotation
+// // also you can change order if xyz to bat you have to reorder it before rotation
 // mesh.rotation.reorder('YXZ')
-// mesh.rotation.reorder('XYZ')bnr
+// mesh.rotation.reorder('XYZ')
 // mesh.rotation.reorder('ZXY')
 // mesh.rotation.z = Math.PI * 0.25
 // mesh.rotation.y = Math.PI * 0.25
@@ -35,11 +35,11 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 // mesh.position.normalize()
 // scene.add(mesh)
 
-//// make a helper axes
+// // make a helper axes
 // let axesHelper = new THREE.AxesHelper(2)
 // scene.add(axesHelper)
 
-//// set a size
+// // set a size
 // let sizes = {
 //     width: screen.availWidth,
 //     height: screen.availHeight
@@ -52,20 +52,25 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 // camera.position.z = 5
 // camera.position.x = 0
 // camera.position.y = 0
-// camera.lookAt(new THREE.Vector3(1, 0, 0))
+// // camera.lookAt(new THREE.Vector3(1, 0, 0))
+// //  camera.lookAt(new THREE.Vector3(10,1,1))
 
-//// it give use reduce of positions
+// // it give use reduce of positions
 // console.log(mesh.position.length());
 
-//// we give scene a camera
+// // we give scene a camera
 // scene.add(camera)
 
-//// give our canvas to webgl to render it
+// // give our canvas to webgl to render it
 // let renderer = new THREE.WebGL1Renderer({
 //     canvas
 // })
 
-//// give renderer size
+// let control = new OrbitControls(camera,canvas)
+// control.enableDamping =true
+
+
+// // give renderer size
 // renderer.setSize(sizes.width, sizes.height)
 
 // // animate
@@ -73,10 +78,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 // let time = Date.now()
 // let clock = new THREE.Clock()
 
-// gsap.to(mesh.position,{duration:1,delay:1 , x:2})
-// gsap.to(mesh.position,{duration:1,delay:2 , x:0})
-// gsap.to(mesh.position,{duration:1,delay:3 , y:2})
-// gsap.to(mesh.position,{duration:1,delay:4 , y:0})
+// // gsap.to(mesh.position,{duration:1,delay:1 , x:2})
+// // gsap.to(mesh.position,{duration:1,delay:2 , x:0})
+// // gsap.to(mesh.position,{duration:1,delay:3 , y:2})
+// // gsap.to(mesh.position,{duration:1,delay:4 , y:0})
 
 // const tick = () => {
 
@@ -85,14 +90,14 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 // mesh.position.x += 0.01
 // mesh.rotation.y+=0.01
 
-// there is tho way to use time for animate to our animate be uniq
-// wey n 1
+// // there is tho way to use time for animate to our animate be uniq
+// // wey n 1
 // let currentTime = Date.now()
 // let deltaTime = currentTime - time
 // time = currentTime
 // mesh.rotation.y += 0.001 * deltaTime
 
-//    wey n2
+//   //  wey n2
 // const elapsedTime = clock.getElapsedTime()
 // mesh.rotation.x = Math.cos(elapsedTime * 0.5)
 // mesh.rotation.y = Math.sin(elapsedTime * 0.5)
@@ -104,23 +109,27 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 //     renderer.render(scene, camera)
 // }
 
-//// and we rendered 'renderer'
+// // and we rendered 'renderer'
 
 // tick()
 
 
+
+
+
+
+
+
 let canvas = document.querySelector(".WebGLClass");
 let scene = new T.Scene();
-let geometry = new T.SphereGeometry(15,20,20);
-let metreial = new T.MeshBasicMaterial({ 
-  color: "green" 
-  ,wireframe:true
+let geometry = new T.SphereGeometry(2, 4, 5);
+let material = new T.MeshBasicMaterial({
+  color: "green",
+  airframe: true,
 });
 
-let mesh = new T.Mesh(geometry, metreial);
+let mesh = new T.Mesh(geometry, material);
 scene.add(mesh);
-
-
 
 const Sizes = {
   width: window.innerWidth,
